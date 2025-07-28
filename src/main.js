@@ -24,7 +24,6 @@ const canvas = document.querySelector("canvas.threejs")
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas
 })
-renderer.setSize(window.innerWidth, window.innerHeight)
 
 // instantiate the controls
 const controls = new OrbitControls(camera, canvas)
@@ -32,6 +31,8 @@ controls.enableDamping = true
 controls.autoRotate = true
 
 const renderLoop = () => {
+  renderer.setSize(window.innerWidth, window.innerHeight)
+
   controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(renderLoop)
