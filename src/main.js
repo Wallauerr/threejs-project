@@ -30,7 +30,11 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls.autoRotate = true
 
+// render the scene
 const renderLoop = () => {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+
   renderer.setSize(window.innerWidth, window.innerHeight)
 
   controls.update()
