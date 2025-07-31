@@ -24,6 +24,7 @@ const canvas = document.querySelector("canvas.threejs")
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas
 })
+renderer.setSize(window.innerWidth, window.innerHeight)
 
 // instantiate the controls
 const controls = new OrbitControls(camera, canvas)
