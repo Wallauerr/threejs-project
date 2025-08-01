@@ -14,6 +14,8 @@ cubeMesh.position.y = 1
 cubeMesh.position.z = 1
 cubeMesh.position.x = 1
 
+cubeMesh.scale.set(2, 2, 1)
+
 const axesHelper = new THREE.AxesHelper(2)
 scene.add(axesHelper)
 
