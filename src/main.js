@@ -10,6 +10,13 @@ const cubeMaterial = new THREE.MeshBasicMaterial({ color: 'gray' })
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
 scene.add(cubeMesh)
 
+cubeMesh.position.y = 1
+cubeMesh.position.z = 1
+cubeMesh.position.x = 1
+
+const axesHelper = new THREE.AxesHelper(2)
+scene.add(axesHelper)
+
 // create the camera
 const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 35)
 camera.position.z = 5
@@ -26,7 +33,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 // instantiate the controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
-controls.autoRotate = true
+controls.autoRotate = false
 
 window.addEventListener('resize', () => {
 	camera.aspect = window.innerWidth / window.innerHeight
