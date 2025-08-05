@@ -8,26 +8,26 @@ const scene = new THREE.Scene()
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 'gray' })
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
-cubeMesh.position.y = 2
-cubeMesh.position.z = 2
-cubeMesh.position.x = 2
+//cubeMesh.position.x = 2
 
 const cubeMesh2 = new THREE.Mesh(cubeGeometry, cubeMaterial)
-cubeMesh2.position.x = 1
+cubeMesh2.position.x = 2
 
 const cubeMesh3 = new THREE.Mesh(cubeGeometry, cubeMaterial)
-cubeMesh3.position.y = 2
+cubeMesh3.position.x = -2
 
 const group = new THREE.Group()
 group.add(cubeMesh)
 group.add(cubeMesh2)
 group.add(cubeMesh3)
 
+group.scale.y = 2
+
 scene.add(group)
 
 //scene.add(cubeMesh)
 
-cubeMesh.scale.set(2, 2, 1)
+//cubeMesh.scale.set(2, 2, 1)
 
 const axesHelper = new THREE.AxesHelper(2)
 scene.add(axesHelper)
