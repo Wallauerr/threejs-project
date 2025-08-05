@@ -8,7 +8,7 @@ const scene = new THREE.Scene()
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 'gray' })
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
-//cubeMesh.position.x = 2
+cubeMesh.position.y = -1
 
 const cubeMesh2 = new THREE.Mesh(cubeGeometry, cubeMaterial)
 cubeMesh2.position.x = 2
@@ -21,7 +21,7 @@ group.add(cubeMesh)
 group.add(cubeMesh2)
 group.add(cubeMesh3)
 
-group.scale.y = 2
+group.position.y = 2
 
 scene.add(group)
 
