@@ -8,9 +8,13 @@ const scene = new THREE.Scene()
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
 const cubeMaterial = new THREE.MeshBasicMaterial({ color: 'gray', wireframe: true })
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
-cubeMesh.position.y = 1
 
 scene.add(cubeMesh)
+
+cubeMesh.rotation.reorder('YXZ')
+
+cubeMesh.rotation.y = THREE.MathUtils.degToRad(45)
+cubeMesh.rotation.x = THREE.MathUtils.degToRad(90)
 
 const axesHelper = new THREE.AxesHelper(2)
 cubeMesh.add(axesHelper)
