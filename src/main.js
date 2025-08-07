@@ -11,7 +11,7 @@ const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
 
 scene.add(cubeMesh)
 
-cubeMesh.rotation.reorder('YXZ')
+cubeMesh.rotation.reorder('YXZ') //default is XYZ
 
 cubeMesh.rotation.y = THREE.MathUtils.degToRad(45)
 cubeMesh.rotation.x = THREE.MathUtils.degToRad(90)
