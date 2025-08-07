@@ -13,11 +13,11 @@ scene.add(cubeMesh)
 
 cubeMesh.rotation.reorder('YXZ') //default is XYZ
 
-cubeMesh.rotation.y = THREE.MathUtils.degToRad(45)
-cubeMesh.rotation.x = THREE.MathUtils.degToRad(90)
+//cubeMesh.rotation.y = THREE.MathUtils.degToRad(45)
+//cubeMesh.rotation.x = THREE.MathUtils.degToRad(90)
 
-const axesHelper = new THREE.AxesHelper(2)
-cubeMesh.add(axesHelper)
+//const axesHelper = new THREE.AxesHelper(2)
+//cubeMesh.add(axesHelper)
 
 // create the camera
 const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 35)
@@ -45,6 +45,8 @@ window.addEventListener('resize', () => {
 
 // render the scene
 const renderLoop = () => {
+	cubeMesh.rotation.y += THREE.MathUtils.degToRad(1)
+
 	controls.update()
 	renderer.render(scene, camera)
 	window.requestAnimationFrame(renderLoop)
