@@ -43,9 +43,17 @@ window.addEventListener('resize', () => {
 	renderer.setSize(window.innerWidth, window.innerHeight)
 })
 
+//initialize the clock
+const clock = new THREE.Clock()
+let previousTime = 0
+
 // render the scene
 const renderLoop = () => {
-	cubeMesh.rotation.y += THREE.MathUtils.degToRad(1)
+	const currentTime = clock.getElapsedTime()
+	const delta = currentTime - previousTime
+	previousTime = currentTime
+
+	cubeMesh.rotation.y += THREE.MathUtils.degToRad(1) * delta * 5
 
 	controls.update()
 	renderer.render(scene, camera)
