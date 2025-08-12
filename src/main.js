@@ -53,7 +53,9 @@ const renderLoop = () => {
 	const delta = currentTime - previousTime
 	previousTime = currentTime
 
-	cubeMesh.rotation.y += THREE.MathUtils.degToRad(1) * delta * 5
+	cubeMesh.rotation.y += THREE.MathUtils.degToRad(1) * delta * 20
+	cubeMesh.scale.x = Math.sin(currentTime) * 20 + 2
+	cubeMesh.position.x = Math.sin(currentTime) + 2
 
 	controls.update()
 	renderer.render(scene, camera)
